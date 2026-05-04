@@ -1,0 +1,22 @@
+# build
+/build/
+/bin/
+/out/
+
+# cmake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# executables
+*.exe
+*.out
+*.o
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
