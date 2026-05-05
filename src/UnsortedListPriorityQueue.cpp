@@ -62,10 +62,6 @@ int UnsortedListPriorityQueue::findIndex(int value) const {
 
 
 void UnsortedListPriorityQueue::modifyKey(int value, int priority) {
-    if (data.isEmpty()) {
-        throw std::runtime_error("Queue is empty");
-    }
-
     int index = findIndex(value);
 
     if (index == -1) {
@@ -76,10 +72,6 @@ void UnsortedListPriorityQueue::modifyKey(int value, int priority) {
 }
 
 void UnsortedListPriorityQueue::decreaseKey(int value, int priority) {
-    if (data.isEmpty()) {
-        throw std::runtime_error("Queue is empty");
-    }
-
     int index = findIndex(value);
 
     if (index == -1) {
@@ -90,7 +82,23 @@ void UnsortedListPriorityQueue::decreaseKey(int value, int priority) {
         throw std::runtime_error("decreaseKey: new priority is not smaller");
     }
 
-    modifyKey(value, priority);
+    data[index].priority = priority;
+}
+
+void UnsortedListPriorityQueue::increaseKey(int value, int priority) {
+
+    int index = findIndex(value);
+
+    if (index == -1) {
+        throw std::runtime_error("Element not found");
+    }
+
+    if (priority <= data[index].priority) {
+        throw std::runtime_error("increaseKey: new priority is not greater");
+    }
+
+    data[index].priority = priority;
+
 }
 
 
@@ -101,4 +109,3 @@ int UnsortedListPriorityQueue::size() const {
 bool UnsortedListPriorityQueue::isEmpty() const {
     return data.isEmpty();
 }
-
