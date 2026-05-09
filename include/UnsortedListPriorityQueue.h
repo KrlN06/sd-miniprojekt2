@@ -6,11 +6,8 @@
 #define PROJEKT_2_UNSORTEDLISTPRIORITYQUEUE_H
 
 #include "DynamicArray.h"
+#include "Node.h"
 
-struct Node {
-        int value;
-        int priority;
-};
 
 class UnsortedListPriorityQueue {
 private:

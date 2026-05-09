@@ -4,12 +4,11 @@
 
 #include "../include/UnsortedListPriorityQueue.h"
 #include "../include/DynamicArray.h"
+#include "../include/Node.h"
 #include <stdexcept>
 
 void UnsortedListPriorityQueue::insert(int value, int priority) {
-    Node newNode;
-    newNode.value = value;
-    newNode.priority = priority;
+    Node newNode{value, priority};
     data.push_back(newNode);
 }
 

@@ -6,12 +6,7 @@
 #define PROJEKT_2_BINARYHEAPPRIORITYQUEUE_H
 
 #include "DynamicArray.h"
-
-struct Node {
-    int value;
-    int priority;
-};
-
+#include "Node.h"
 class BinaryHeapPriorityQueue {
 
 private:

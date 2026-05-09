@@ -3,7 +3,7 @@
 //
 
 #include "../include/BinaryHeapPriorityQueue.h"
-
+#include "../include/Node.h"
 #include <filesystem>
 #include <algorithm>
 #include <stdexcept>
@@ -33,13 +33,9 @@ void BinaryHeapPriorityQueue::siftUp(int i) {
 }
 
 void BinaryHeapPriorityQueue::insert(int value, int priority) {
-
-    Node newNode;
-    newNode.priority = priority;
-    newNode.value = value;
+    Node newNode{value, priority};
     data.push_back(newNode);
-    siftUp(data.getSize()-1);
-
+    siftUp(data.getSize() - 1);
 }
 
 void BinaryHeapPriorityQueue::siftDown(int i) {
